@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Leonardo Cordeiro da Silva">
+<title>Triagem de chamados de TI | Leonardo Cordeiro da Silva | IFSP</title>
+<style>
+  @page { size: A4; margin: 0 }
+  * { box-sizing: border-box }
+  html, body { margin: 0; color: #183238; background: #e8ebea }
+  body { font: 10.6pt/1.53 "Noto Sans", "Segoe UI", Arial, sans-serif; }
+  .sheet { width: 210mm; height: 297mm; margin: 7mm auto; padding: 14mm 20mm 21mm; background: #fff; position: relative; break-after: page; }
+  .sheet:last-child { break-after: auto }
+  .running, footer { display: flex; align-items: baseline; justify-content: space-between; color: #526366; font-size: 8pt; }
+  .running { border-bottom: 0.27mm solid #a4b9b8; padding-bottom: 3.4mm; margin-bottom: 8mm; }
+  .running b { color: #205b5c; }
+  footer { position: absolute; left: 20mm; right: 20mm; bottom: 12mm; border-top: 0.22mm solid #bfd0ce; padding-top: 2.9mm; }
+  h1, h2 { font-family: "Noto Serif", Georgia, serif; font-weight: 600; margin: 0; color: #14373a; }
+  h2 { font-size: 25.5pt; line-height: 1.17; letter-spacing: -0.65pt; margin-bottom: 4.5mm; }
+  h3 { font-size: 13pt; letter-spacing: -0.13pt; line-height: 1.3; margin: 6mm 0 2mm; color: #205b5c; }
+  p { margin: 0 0 3mm; }
+  .lead { font-size: 11.5pt; line-height: 1.47; }
+  .sec { color: #537b79; font-size: 9pt; font-weight: 700; margin: 0 0 2mm; letter-spacing: 0.85pt; }
+  b, strong { font-weight: 700; }
+  .cite, .note { color: #4d6567; }
+  .note { font-size: 8.9pt; }
+  a { color: #145c62; text-decoration: underline; text-underline-offset: 1.4pt; }
+  a.cite { text-decoration: none; font-size: 8.2pt; white-space: nowrap; }
+  code, pre { font-family: "DejaVu Sans Mono", Consolas, monospace; }
+  code { font-size: 0.88em; }
+  pre { background: #f0f5f4; padding: 3mm 4mm; border-left: 0.8mm solid #367672; font-size: 9pt; line-height: 1.6; color: #203941; margin: 2.7mm 0 3mm; white-space: pre-wrap; }
+  .display { font-family: "Noto Serif", Georgia, serif; font-size: 13.7pt; text-align: center; margin: 3.6mm 0; line-height: 1.45; color: #123e41; }
+  .display i { font-family: Georgia, "Noto Serif", serif; }
+  .display sub, .display sup { font-size: 0.68em; }
+  .summation { display: inline-grid; vertical-align: middle; justify-items: center; line-height: 1.03; padding: 0 0.3mm; }
+  .summation small { font-size: .58em; } .summation span { font-size: 1.35em; }
+  .mathline { padding: 2.6mm 4mm; background: #f1f6f5; border-left: 0.8mm solid #397a75; }
+  .equation { display: flex; justify-content: center; align-items: center; gap: 3mm; margin: 3.8mm 0; font: 12.5pt/1.36 "Noto Serif", Georgia, serif; color: #163f42; }
+  .matrix { display: grid; gap: 0.5mm 4mm; padding: 1.4mm 3mm; text-align: right; position: relative; font-variant-numeric: tabular-nums; }
+  .matrix.three { grid-template-columns: repeat(3, auto); }
+  .matrix::before, .matrix::after { content: ""; position: absolute; width: 1.8mm; top: 0; bottom: 0; border-top: 0.35mm solid; border-bottom: 0.35mm solid; }
+  .matrix::before { left: 0; border-left: 0.35mm solid; } .matrix::after { right: 0; border-right: 0.35mm solid; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th { font-weight: 650; }
+  .train { margin: 2.5mm 0 2.4mm; font-size: 10.3pt; }
+  .train td, .train th { text-align: center; padding: 1.75mm 2mm; border-bottom: 0.2mm solid #cfdbd9; }
+  .train thead tr:nth-child(2) { color: #526366; font-size: 8.7pt; }
+  .train thead tr:first-child th { border-bottom: 0; font-size: 11pt; }
+  .rgroup { background: #e4f2f2; color: #125c65 } .pgroup { background: #faeadd; color: #7d381c; }
+  .train tbody td:nth-child(3), .train thead tr:nth-child(2) th:nth-child(3) { border-left: 0.3mm solid #adbebd; }
+  .example { margin-top: 4.2mm; border-left: 0.75mm solid #92b6b2; padding-left: 3.7mm; }
+  .cover { padding-top: 24mm; }
+  .school { font-size: 13.6pt; font-weight: 700; color: #154b4d; }
+  .programme { font-size: 10.8pt; color: #4c6262; margin-top: 1.1mm; }
+  .cover-title { margin-top: 36mm; border-top: 1mm solid #286560; padding-top: 6mm; }
+  .cover .sec { margin-bottom: 4mm; }
+  h1 { font-size: 46pt; line-height: 1.05; letter-spacing: -1.6pt; }
+  .subtitle { max-width: 142mm; margin: 6mm 0 0; font: 16.5pt/1.37 "Noto Serif", Georgia, serif; color: #3f5e60; }
+  .credits { margin-top: 22mm; }
+  .credit-line { display: grid; grid-template-columns: 33mm 1fr; align-items: baseline; margin: 2.3mm 0; }
+  .credit-line span { color: #586c6c; font-size: 9.3pt }
+  .credit-line p { margin: 0; }
+  figure { margin: 4mm 0 5mm; }
+  figure img { width: 100%; display: block; }
+  figcaption { font-size: 9.2pt; line-height: 1.45; padding-top: 2mm; color: #40595c; }
+  .tests { margin: 3mm 0 3mm; font-size: 9.5pt; }
+  .tests th { background: #eaf2f1; color: #234b4e; text-align: left; }
+  .tests td, .tests th { padding: 2mm 2.2mm; border-bottom: 0.23mm solid #b8ccca; vertical-align: top; }
+  .tests td:first-child { font-weight: 700; }
+  .refs { margin: 2mm 0 0; padding: 0; list-style: none; font-size: 8.7pt; line-height: 1.38; }
+  .refs li { display: grid; grid-template-columns: 7mm 1fr; gap: 1mm; margin-bottom: 1.95mm; }
+  .refs .num { font-weight: bold; color: #216261; }
+  .compact { margin-top: 4mm; }
+  @media print { html, body { background: white; } .sheet { margin: 0; } * { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+  @media screen and (max-width: 800px) { html { overflow-x: auto; } .sheet { margin: 0 0 2mm; } }
+</style>
+</head>
+<body>
+
+<section class="sheet cover" aria-label="Capa">
+  <div class="school">Instituto Federal de São Paulo – IFSP</div>
+  <div class="programme">Bacharelado em Sistemas de Informação</div>
+  <div class="cover-title">
+    <p class="sec">ATIVIDADE PRÁTICA · TEMA 2</p>
+    <h1>Triagem de<br>chamados de TI</h1>
+    <p class="subtitle">Classificador linear simples para reconhecimento de padrões</p>
+  </div>
+  <div class="credits">
+    <div class="credit-line"><span>Discente</span><p><b>Leonardo Cordeiro da Silva</b></p></div>
+    <div class="credit-line"><span>Protocolo</span><p>SP3301699</p></div>
+    <div class="credit-line"><span>Disciplina</span><p>SPOMVAL · Vetores, Geometria Analítica e Álgebra Linear</p></div>
+    <div class="credit-line"><span>Docente</span><p>Profa. Josceli</p></div>
+  </div>
+  <footer><span>São Paulo</span><span>23 de novembro de 2026</span></footer>
+</section>
+
+<section class="sheet">
+  <div class="running"><b>IFSP · Sistemas de Informação</b><span>SPOMVAL · Tema 2</span></div>
+  <p class="sec">1 · APLICAÇÃO</p>
+  <h2>Qual chamado atender primeiro?</h2>
+  <p class="lead">Quando um sistema de laboratório fica indisponível, a equipe de TI precisa decidir se o incidente pode seguir na fila de rotina ou se exige atendimento prioritário. Este projeto usa duas informações disponíveis no momento da triagem para sugerir a fila de um novo chamado.</p>
+  <p>O processo de gestão de incidentes do Instituto Federal do Tocantins considera o número de usuários afetados ao avaliar o impacto e combina impacto e urgência na priorização <a class="cite" href="#ref1">[1]</a>. No protótipo, a contagem de usuários representa o alcance da falha. Os minutos já transcorridos representam a duração observada até a triagem.</p>
+  <h3>Do registro ao ponto no plano</h3>
+  <p>Cada chamado corresponde a um ponto <i>x</i> = (<i>u</i>, <i>t</i>). A primeira coordenada conta as pessoas afetadas e a segunda mede os minutos de indisponibilidade. O rótulo <b>−1</b> mantém o chamado na fila de rotina. O rótulo <b>+1</b> o encaminha para atendimento prioritário.</p>
+  <h3>Tabela 1. Chamados usados no treinamento</h3>
+  <p>Os 12 cenários do arquivo <code>treino.csv</code> são simulados. Cada um recebeu um rótulo antes do ajuste. Há seis registros em cada classe.</p>
+  <table class="train" aria-label="Chamados usados no treinamento">
+    <thead>
+      <tr><th class="rgroup" colspan="2">Rotina (−1)</th><th class="pgroup" colspan="2">Prioritário (+1)</th></tr>
+      <tr><th>Usuários</th><th>Minutos</th><th>Usuários</th><th>Minutos</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2</td><td>5</td><td>5</td><td>30</td></tr>
+      <tr><td>4</td><td>10</td><td>8</td><td>25</td></tr>
+      <tr><td>8</td><td>10</td><td>12</td><td>15</td></tr>
+      <tr><td>10</td><td>5</td><td>15</td><td>10</td></tr>
+      <tr><td>3</td><td>20</td><td>10</td><td>30</td></tr>
+      <tr><td>5</td><td>20</td><td>14</td><td>25</td></tr>
+    </tbody>
+  </table>
+  <p class="example">Aos 10 minutos, o chamado de quatro usuários está na fila de rotina e o de 15 usuários tem prioridade. Para cinco usuários, a própria tabela registra decisões diferentes aos 20 e aos 30 minutos. Esses pares ajudam a entender por que o modelo precisa das duas coordenadas.</p>
+  <footer><span>Leonardo Cordeiro da Silva</span><span>2 / 5</span></footer>
+</section>
+
+<section class="sheet">
+  <div class="running"><b>IFSP · Sistemas de Informação</b><span>SPOMVAL · Tema 2</span></div>
+  <p class="sec">2 · FUNDAMENTAÇÃO E AJUSTE</p>
+  <h2>Como os dados determinam a reta</h2>
+  <p>Seja <i>w</i> = (<i>w</i><sub>u</sub>, <i>w</i><sub>t</sub>) o vetor de pesos. O produto interno com <i>x</i> = (<i>u</i>, <i>t</i>) soma as contribuições das duas coordenadas. O intercepto <i>b</i> desloca a fronteira no plano <a class="cite" href="#ref2">[2]</a> <a class="cite" href="#ref3">[3]</a>.</p>
+  <div class="display mathline"><i>s</i>(<i>u</i>, <i>t</i>) = <i>b</i> + ⟨<i>w</i>, <i>x</i>⟩ = <i>b</i> + <i>w</i><sub>u</sub><i>u</i> + <i>w</i><sub>t</sub><i>t</i></div>
+  <p>Para <i>w</i> diferente do vetor nulo, os pontos que satisfazem <i>s</i> = 0 formam um hiperplano, que em duas dimensões é uma reta. Se dois pontos estão nessa reta, a diferença entre seus escores é zero. Assim, o deslocamento entre eles é perpendicular a <i>w</i>. O sinal de <i>s</i> identifica o semiplano. A regra atribui +1 para <i>s</i> ≥ 0 e −1 para <i>s</i> &lt; 0 <a class="cite" href="#ref4">[4]</a>.</p>
+  <h3>O que significa um ajuste ótimo?</h3>
+  <p>A matriz <i>X</i> tem 12 linhas da forma (1, <i>u</i><sub>i</sub>, <i>t</i><sub>i</sub>). O vetor <i>y</i> contém os rótulos e θ agrupa o intercepto e os dois pesos. Mínimos quadrados escolhe θ para minimizar a soma dos quadrados das diferenças entre os escores e os rótulos.</p>
+  <div class="display"><i>J</i>(θ) = ‖<i>X</i>θ − <i>y</i>‖<sub>2</sub><sup>2</sup> = <span class="summation"><small>12</small><span>∑</span><small><i>i</i> = 1</small></span> (<i>b</i> + <i>w</i><sub>u</sub><i>u</i><sub>i</sub> + <i>w</i><sub>t</sub><i>t</i><sub>i</sub> − <i>y</i><sub>i</sub>)²</div>
+  <p>No mínimo, o resíduo <i>y</i> − <i>X</i>θ é ortogonal às colunas de <i>X</i>. Isso dá as equações normais (<i>X</i><sup>T</sup><i>X</i>)θ = <i>X</i><sup>T</sup><i>y</i> <a class="cite" href="#ref2">[2]</a> <a class="cite" href="#ref3">[3]</a>. Para os dados da Tabela 1, o sistema é</p>
+  <div class="equation" aria-label="Sistema de três equações normais">
+    <span class="matrix three"><span>12</span><span>96</span><span>205</span><span>96</span><span>972</span><span>1670</span><span>205</span><span>1670</span><span>4425</span></span>
+    <span class="matrix"><i>b</i><i>w<sub>u</sub></i><i>w<sub>t</sub></i></span>
+    <span>=</span><span class="matrix"><span>0</span><span>32</span><span>65</span></span>
+  </div>
+  <p>A entrada 96 soma os usuários dos 12 chamados. O termo 32, no lado direito, é a soma de usuários nos prioritários menos a soma nos de rotina. O determinante da matriz é 2.248.500, portanto o sistema tem uma solução única. O escalonamento fornece o escore exato</p>
+  <div class="display mathline"><i>s</i>(<i>u</i>, <i>t</i>) = (−51&#8239;695 + 3&#8239;310<i>u</i> + 1&#8239;476<i>t</i>) / 22&#8239;485.</div>
+  <p class="example">No chamado (5, 20), as contribuições ao numerador são 16.550 pelos usuários e 29.520 pelo tempo. Subtraindo 51.695 dessa soma, restam −5.625. O escore é aproximadamente −0,2502, valor que encaminha o chamado para a fila de rotina.</p>
+  <footer><span>Leonardo Cordeiro da Silva</span><span>3 / 5</span></footer>
+</section>
+
+<section class="sheet">
+  <div class="running"><b>IFSP · Sistemas de Informação</b><span>SPOMVAL · Tema 2</span></div>
+  <p class="sec">3 · RESULTADOS</p>
+  <h2>As duas regiões de atendimento</h2>
+  <p class="lead">Igualando o escore a zero, obtém-se a fronteira <i>t</i> ≈ 35,0237 − 2,2425<i>u</i>. Para cada pessoa adicional afetada, o tempo necessário para atingir a fronteira diminui em cerca de 2 minutos e 15 segundos nesta base.</p>
+  <figure>
+    <img src="figura_1.svg" alt="Gráfico dos 12 chamados de treino, dos testes T1 e T2 e da reta decrescente. Os chamados de rotina estão abaixo da reta e os prioritários, acima.">
+    <figcaption><b>Figura 1.</b> O fundo azul-esverdeado representa a região de rotina e o alaranjado, a prioritária. Os símbolos preenchidos mostram os rótulos de treino. As cruzes T1 e T2 identificam os dois chamados novos. Gráfico gerado pelo programa com os dados da Tabela 1.</figcaption>
+  </figure>
+  <h3>Leitura da fronteira</h3>
+  <p>Ao fixar <i>u</i> = 8, a reta cruza a vertical em <i>t</i> = 205/12 minutos, ou <b>17 minutos e 5 segundos</b>. T1 fica abaixo do corte e T2 fica acima. Um chamado exatamente no corte recebe prioridade, conforme a regra de desempate.</p>
+  <h3>O que os acertos permitem concluir</h3>
+  <p>O modelo acertou os 12 rótulos de treino, mas a soma dos erros quadráticos foi 3,022459. Por exemplo, o chamado (2, 5) recebeu escore aproximado de −1,6765. O sinal acerta a classe de rotina e a diferença para −1 entra no erro. O escore pode ultrapassar o intervalo de −1 a +1.</p>
+  <p>Os 12 acertos descrevem o ajuste aos exemplos simulados. Uma avaliação operacional exigiria chamados reais de outro período, rotulados pela equipe. Uma falha durante uma prova, por exemplo, pode exigir prioridade mesmo com poucos usuários afetados. A criticidade do serviço é uma informação que este modelo de duas variáveis deixa de observar.</p>
+  <footer><span>Leonardo Cordeiro da Silva</span><span>4 / 5</span></footer>
+</section>
+
+<section class="sheet">
+  <div class="running"><b>IFSP · Sistemas de Informação</b><span>SPOMVAL · Tema 2</span></div>
+  <p class="sec">4 · IMPLEMENTAÇÃO E TESTES</p>
+  <h2>Como reproduzir o resultado</h2>
+  <p>Na pasta do projeto, execute os comandos abaixo com Python 3. O primeiro ajusta o modelo, classifica os dois chamados e grava <code>decisao.svg</code>. O segundo verifica as previsões automaticamente.</p>
+  <pre>python classificador.py --ponto 8 15 --ponto 8 20
+python testes.py</pre>
+  <p><code>modelo.py</code> lê o CSV, acumula os produtos de cada linha e resolve o sistema 3 × 3 por eliminação de Gauss com pivoteamento parcial e substituição regressiva. As frações preservam a igualdade exata na fronteira. <code>grafico.py</code> encontra os cruzamentos da reta com as bordas do gráfico e pinta os dois semiplanos. Todo o programa usa a biblioteca padrão do Python.</p>
+  <h3>Dois casos com saída esperada e obtida</h3>
+  <p>Os pontos abaixo ficaram fora do treino. Os valores esperados vêm da substituição na fórmula exata da página 3. Os valores obtidos foram impressos pelo programa, com seis casas decimais.</p>
+  <table class="tests">
+    <thead><tr><th>Caso</th><th>Entrada (usuários, min)</th><th>Saída esperada</th><th>Saída obtida</th></tr></thead>
+    <tbody><tr><td>T1</td><td>(8, 15)</td><td>−205/1499 · Rotina (−1)</td><td>−0,136758 · Rotina (−1)</td></tr>
+    <tr><td>T2</td><td>(8, 20)</td><td>287/1499 · Prioritário (+1)</td><td>+0,191461 · Prioritário (+1)</td></tr></tbody>
+  </table>
+  <p>Os cinco minutos adicionais elevaram o escore em 492/1499 (≈ 0,3282), o suficiente para atravessar a reta. Para consultar outros pontos pelo teclado, use <code>python classificador.py --interativo</code>. A opção <code>--treino</code> permite indicar outro CSV com o mesmo cabeçalho.</p>
+  <p>As seis verificações de <code>testes.py</code> passaram. Além de T1 e T2, o arquivo testa o empate na reta, uma fronteira vertical, pontos de treino colineares e quatro pontos com rótulos alternados nos cantos de um quadrado. Neste último caso, conhecido como XOR, o ajuste produz escore zero em todos os pontos. Uma única reta é insuficiente para separar as diagonais.</p>
+  <h3 class="compact">Referências</h3>
+  <ol class="refs">
+    <li id="ref1"><span class="num">[1]</span><span>INSTITUTO FEDERAL DO TOCANTINS. <i>Processo de gestão de incidentes.</i> 2021. Seção 8.3, Priorização. <a href="https://portal.ifto.edu.br/ifto/reitoria/diretoria-sistemica/tecnologia-da-informacao/documentos/processos/processo-de-gestao-de-incidentes">Documento do IFTO</a>.</span></li>
+    <li id="ref2"><span class="num">[2]</span><span>LAY, David C.; LAY, Steven R.; MCDONALD, Judi J. <i>Álgebra linear e suas aplicações.</i> 5. ed. Rio de Janeiro: LTC, 2018. Cap. 6. Obra da bibliografia básica de SPOMVAL. <a href="https://spo.ifsp.edu.br/images/phocadownload/DOCUMENTOS_MENU_LATERAL_FIXO/GRADUACAO/SISTEMAS_DE_INFORMACAO/PPC-5fev2023.pdf">PPC do IFSP, p. 133</a>.</span></li>
+    <li id="ref3"><span class="num">[3]</span><span>VITORINO, Alfredo; RUGGIERO, Márcia Aparecida Gomes. <i>Álgebra Linear e Aplicações.</i> IMECC, Unicamp. <a href="https://www.ime.unicamp.br/~marcia/AlgebraLinear/index.html">Página do projeto</a>. Seções <a href="https://www.ime.unicamp.br/~marcia/AlgebraLinear/produto_interno.html">Produto interno</a> e <a href="https://www.ime.unicamp.br/~marcia/AlgebraLinear/quadrados_minimos.html">Quadrados mínimos</a>.</span></li>
+    <li id="ref4"><span class="num">[4]</span><span>BOYD, Stephen; VANDENBERGHE, Lieven. <i>Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares.</i> Cambridge University Press, 2018. Cap. 14, seção 14.2. <a href="https://web.stanford.edu/~boyd/vmls/">Livro dos autores</a>.</span></li>
+  </ol>
+  <footer><span>Leonardo Cordeiro da Silva</span><span>5 / 5</span></footer>
+</section>
+</body>
+</html>
